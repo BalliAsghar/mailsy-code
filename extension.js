@@ -8,7 +8,7 @@ function activate(context) {
 
   let createAccount = vscode.commands.registerCommand(
     "mailsy-code.createAccount",
-    MakeAccount
+    MakeAccount(context)
   );
 
   context.subscriptions.push(createAccount);
