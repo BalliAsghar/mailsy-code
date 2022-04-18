@@ -1,15 +1,23 @@
 import * as vscode from "vscode";
-import Utils from "./utils/functions";
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('Congratulations, your extension "mailsy-code" is now active!');
-
-  let disposable = vscode.commands.registerCommand(
-    "mailsy-code.helloWorld",
-    async () => await Utils.makeAccount()
+  context.subscriptions.push(
+    vscode.commands.registerCommand("mailsy-code.create", () => {})
   );
 
-  context.subscriptions.push(disposable);
+  context.subscriptions.push(
+    vscode.commands.registerCommand("mailsy-code.delete", () => {})
+  );
+
+
+
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand("mailsy-code.about", () => {})
+  );
+  context.subscriptions.push(
+    vscode.commands.registerCommand("mailsy-code.mails", () => {})
+  );
 }
 
 export function deactivate() {}
